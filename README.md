@@ -10,6 +10,7 @@ pip install pastebinOmatic
 
 ```python
 from pastebinOmatic import *
+
 p = parce("https://pastebin.com/XrXxjtWw")
 
 paste_title = p.get_title()

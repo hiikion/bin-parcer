@@ -17,5 +17,9 @@ paste_title = p.get_title()
 print(paste_title)
 # output: hiiiiiiiiiiiiiiiiiiiiiiiiiii
 ```
+## TODO
+- api stuff
+- code optimization
+
 ## links
 <a href="https://github.com/hiikion/pastebinOmatic/blob/main/DOCS.md">DOCS</a> | <a href="https://pypi.org/project/pastebinOmatic/">PyPi</a>

@@ -21,6 +21,7 @@ print(paste_title)
 ## TODO
 - api stuff
 - code optimization
+- scrapper
 
 ## links
 <a href="https://github.com/hiikion/pastebinOmatic/blob/main/DOCS.md">DOCS</a> | <a href="https://pypi.org/project/pastebinOmatic/">PyPi</a>

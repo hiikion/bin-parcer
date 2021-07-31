@@ -5,7 +5,7 @@ import requests
 # v1.0
 # mpl 2.0 licence 
 
-class parce:
+class parse:
     
     def __init__(self, url):
         self.url = url

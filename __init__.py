@@ -1,8 +1,9 @@
 from bs4 import BeautifulSoup
 import requests
+import random
 
 # pastebinOmatic by hiikion aka hkon
-# v1.0
+# v1.1
 # mpl 2.0 licence 
 
 class parce:
@@ -10,8 +11,9 @@ class parce:
     def __init__(self, url):
         self.url = url
 
-    def get_content(self):
 
+    def get_content(self):
+        
         page = requests.get(self.url).content
 
         soup = BeautifulSoup(page, 'html.parser')
@@ -22,7 +24,6 @@ class parce:
 
 
     def get_title(self):
-
         page = requests.get(self.url).content
 
         soup = BeautifulSoup(page, 'html.parser')
@@ -39,40 +40,36 @@ class parce:
 
         author = soup.find('div', class_='username')
 
-        return author.text
+        return author.text.strip()
 
     def get_date(self):
-
         page = requests.get(self.url).content
 
         soup = BeautifulSoup(page, 'html.parser')
 
         date = soup.find('div', class_='date')
 
-        return date.text
+        return date.text.strip().replace(' ', '')
 
     def get_views(self):
-
         page = requests.get(self.url).content
 
         soup = BeautifulSoup(page, 'html.parser')
 
         views = soup.find('div', class_='visits')
 
-        return views.text
+        return int(views.text)
 
     def get_expire_date(self):
-
         page = requests.get(self.url).content
 
         soup = BeautifulSoup(page, 'html.parser')
 
         exp_date = soup.find('div', class_='expire')
 
-        return exp_date.text
+        return exp_date.text.strip().replace(' ', '')
 
     def get_syntax_hilight(self):
-
         page = requests.get(self.url).content
 
         soup = BeautifulSoup(page, 'html.parser')
@@ -81,8 +78,30 @@ class parce:
 
         return shl.text
 
-
 '''
 class api:
-    soon...
+    
+    def __init__(self, api_key):
+        self.api_key = str(api_key)
+
+    def create(self, text, title, view, expire, syntax_hilight):
+        self.text = str(text)
+        self.title = str(title)
+        self.view = int(view)
+        self.expire = str(expire)
+        self.syntax_hilight = str(syntax_hilight)
+
+
+        postc = {
+            'api_dev_key': self.api_key,
+            'api_paste_code': self.text,
+            'api_paste_private': self.view,
+            'api_paste_name': self.title,
+            'api_paste_expire_date': self.expire,
+            'api_paste_format': self.syntax_hilight,
+            'api_user_key': self.api_key,
+            'api_option': 'paste'
+        }
+
+        
 '''

@@ -1,4 +1,4 @@
-# pastebinOmatic v1.0
+# pastebinOmatic v1.1
 pastebinOmatic is a utility lib for working with pastebin.com
 
 ## instolation

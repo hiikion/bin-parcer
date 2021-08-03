@@ -21,7 +21,6 @@ print(paste_title)
 ```
 ## TODO
 - api stuff
-- code optimization
 - scrapper
 
 ## links

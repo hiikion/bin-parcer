@@ -50,7 +50,7 @@ type: int
 expire_date = p.get_expire_date()
 ```
 reurns pate expire date <br>
-type: int
+type: str
 
 ### get_syntax_hilight()
 ```python

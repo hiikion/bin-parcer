@@ -57,6 +57,7 @@ type: int
 syntax_hilight = p.get_syntax_hilight()
 ```
 returns pate syntax hilight <br>
+if none returns `text` <br>
 type: str
 
 

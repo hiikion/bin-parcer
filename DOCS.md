@@ -68,5 +68,38 @@ type: str
 password_check = p.password_check
 ```
 returns true if paste has password false if dosent <br>
-type: bool <br>
+type: bool <br> <br>
+<a href='#pastebinOmatic-docs'>BACK</a>
+
+
+## ghostbin
+
+importing and calling the class
+```python
+import pastebinOmatic as pom
+
+g = pom.ghostbin('https://ghostbin.com/paste/ymgve')
+```
+
+### get_content()
+```python
+content = g.get_content()
+```
+returns paste content <br>
+type: str <br>
+
+### get_title()
+```python
+title = g.get_title()
+```
+returns paste title if none returns `None` <br>
+type: str <br>
+
+### password_check()
+```python
+password_check = g.password_check()
+```
+returns true if paste has password false if dosent <br>
+type: bool
+
 <a href='#pastebinOmatic-docs'>BACK</a>

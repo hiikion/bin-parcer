@@ -1,6 +1,6 @@
 # pastebinOmatic docs
 
-- <a href='#'>pastebin</a>
+- <a href='#pastebin'>pastebin</a>
 - <a href='#'>ghostbin</a>
 
 
@@ -67,6 +67,6 @@ type: str
 ```python
 password_check = p.password_check
 ```
-returns true if paste has password false if dosent
-type: bool
+returns true if paste has password false if dosent <br>
+type: bool <br>
 <a href='#'>BACK</a>

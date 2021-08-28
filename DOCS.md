@@ -69,4 +69,4 @@ password_check = p.password_check
 ```
 returns true if paste has password false if dosent <br>
 type: bool <br>
-<a href='#'>BACK</a>
+<a href='#pastebinOmatic-docs'>BACK</a>

@@ -1,14 +1,17 @@
 # pastebinOmatic docs
 
+- <a href='#'>pastebin</a>
+- <a href='#'>ghostbin</a>
+
+
+## pastebin
 
 importing and calling the class
 ```python
 import pastebinOmatic as pom
 
-p = pom.parce('https://pastebin.com/XrXxjtWw')
+p = pom.pastebin('https://pastebin.com/XrXxjtWw')
 ```
-
-## pacer
 
 ### get_content()
 ```python
@@ -60,5 +63,10 @@ returns pate syntax hilight <br>
 if none returns `text` <br>
 type: str
 
-
+### password_check()
+```python
+password_check = p.password_check
+```
+returns true if paste has password false if dosent
+type: bool
 <a href='#'>BACK</a>

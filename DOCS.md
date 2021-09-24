@@ -1,17 +1,24 @@
 # bin parcer docs
 
 - <a href='#pastebin'>pastebin</a>
-- <a href='#'>ghostbin</a>
+- <a href='#ghostbin'>ghostbin</a>
 
 
 ## pastebin
 
 importing and calling the class
 ```python
-import pastebinOmatic as pom
+import bin_parcer as bp
 
-p = pom.pastebin('https://pastebin.com/XrXxjtWw')
+p = bp.pastebin('https://pastebin.com/XrXxjtWw')
 ```
+### get_all()
+```python
+p.get_all('json')
+```
+returns all paste stuff <br>
+format: dict, json <br>
+type dict || str <br>
 
 ### get_content()
 ```python
@@ -76,11 +83,14 @@ type: bool <br> <br>
 
 importing and calling the class
 ```python
-import pastebinOmatic as pom
+import bin_parcer as bp
 
-g = pom.ghostbin('https://ghostbin.com/paste/ymgve')
+g = bp.ghostbin('https://ghostbin.com/paste/ymgve')
 ```
-
+### get_all()
+```python
+g.get_all('json')
+```
 ### get_content()
 ```python
 content = g.get_content()
@@ -94,6 +104,9 @@ title = g.get_title()
 ```
 returns paste title if none returns `None` <br>
 type: str <br>
+returns all paste stuff <br>
+format: dict, json <br>
+type dict || str <br>
 
 ### password_check()
 ```python
@@ -102,4 +115,4 @@ password_check = g.password_check()
 returns true if paste has password false if dosent <br>
 type: bool
 
-<a href='#pastebinOmatic-docs'>BACK</a>
+<a href='#bin-parcer-docs'>BACK</a>

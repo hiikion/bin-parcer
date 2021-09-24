@@ -1,6 +1,6 @@
 from bs4 import BeautifulSoup
 import requests
-
+import json
 
 # pastebinOmatic by hiikion aka hkon
 # v1.2
@@ -10,9 +10,8 @@ import requests
 # pastebin integration added in 1.0
 class pastebin:
     
-    def __init__(self, url):
+    def __init__(self, url : str):
         self.url = url
-
 
     def password_check(self):
         page = requests.get(self.url).text
@@ -26,7 +25,6 @@ class pastebin:
         soup = BeautifulSoup(page, 'html.parser')
         content = soup.find('textarea', class_='textarea')
         return content.text
-
 
     def get_title(self):
         page = requests.get(self.url).content
@@ -65,16 +63,45 @@ class pastebin:
         return shl.text
 
 
+    def get_all(self, format = 'dict'):
+        if format == 'dict':
+            dictt = {
+                'title': pastebin.get_title(self),
+                'content': f'''{pastebin.get_content(self)}''',
+                'author': pastebin.get_author(self),
+                'creation date': pastebin.get_date(self),
+                'views': pastebin.get_views(self),
+                'expire date': pastebin.get_expire_date(self),
+                'syntax hilight': pastebin.get_syntax_hilight(self)
+            }
+            return dictt
+
+        elif format == 'json':
+            dictt = {
+                'title': pastebin.get_title(self),
+                'content': f'''{pastebin.get_content(self)}''',
+                'author': pastebin.get_author(self),
+                'creation date': pastebin.get_date(self),
+                'views': pastebin.get_views(self),
+                'expire date': pastebin.get_expire_date(self),
+                'syntax hilight': pastebin.get_syntax_hilight(self)
+            }
+
+            return json.dumps(dictt)
+
+        else:
+            return ValueError('no such format')
+
 
 # ghostbin.com integration added in 1.2
 class ghostbin:
 
-    def __init__(self, url):
+    def __init__(self, url : str):
         self.url = url
 
     def password_check(self):
         page = requests.get(self.url).content
-        soup = BeautifulSoup(page, 'html.parcer')
+        soup = BeautifulSoup(page, 'html.parser')
         if soup.find('div', class_='container').text.replace('"', '') == 'Encrypted pastes have this format: ghostbin.com/<pasteId>/<password>':
             return True
         else:
@@ -82,15 +109,33 @@ class ghostbin:
 
     def get_title(self):
         page = requests.get(self.url).content
-        soup = BeautifulSoup(page, 'html.parcer')
+        soup = BeautifulSoup(page, 'html.parser')
         try:
             title = soup.find('h4')
-            return title.text
+            return title.text.replace('raw', '')
         except:
             return None
 
     def get_content(self):
         page = requests.get(self.url).content
-        soup = BeautifulSoup(page, 'html.parcer')
-        content = soup.find('textarea', class_='form-control')
+        soup = BeautifulSoup(page, 'html.parser')
+        content = soup.find('textarea', class_='paste')
         return content.text
+
+    def get_all(self, format = 'dict'):
+        if format == 'dict':
+            dictt = {
+                'title': ghostbin.get_title(self),
+                'content': ghostbin.get_content(self)
+            }
+            return dictt
+
+        elif format == 'json':
+            dictt = {
+                'title': ghostbin.get_title(self),
+                'content': ghostbin.get_content(self)
+            }
+            return json.dumps(dictt)
+
+        else:
+            return ValueError('no such format')

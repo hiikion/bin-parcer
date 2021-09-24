@@ -10,10 +10,10 @@ pip install pastebinOmatic
 ## examples
 
 ```python
-import pastebinOmatic as pom 
+import bin_parcer as bp
 
 
-p = pom.parce("https://pastebin.com/XrXxjtWw")
+p = bp.parce("https://pastebin.com/XrXxjtWw")
 
 paste_title = p.get_title()
 

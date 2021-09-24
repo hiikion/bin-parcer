@@ -1,5 +1,5 @@
 # bin parcer v1.3
-previously pastebinomatic
+previously pastebinomatic <br>
 pastebinOmatic is a utility lib for working text bins
 
 ## instolation

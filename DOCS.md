@@ -1,4 +1,4 @@
-# pastebinOmatic docs
+# bin parcer docs
 
 - <a href='#pastebin'>pastebin</a>
 - <a href='#'>ghostbin</a>

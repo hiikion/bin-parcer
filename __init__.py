@@ -7,7 +7,7 @@ import json
 # mpl 2.0 licence 
 
 
-# pastebin integration added in 1.0
+
 class pastebin:
     
     def __init__(self, url : str):

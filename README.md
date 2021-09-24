@@ -22,4 +22,4 @@ print(paste_title)
 ```
 
 ## links
-<a href="https://github.com/hiikion/pastebinOmatic/blob/main/DOCS.md">DOCS</a> | <a href="https://pypi.org/project/pastebinOmatic/">PyPi</a>
+<a href="https://github.com/hiikion/bin_parcer/blob/main/DOCS.md">DOCS</a> | <a href="https://pypi.org/project/bin-parcer/">PyPi</a>

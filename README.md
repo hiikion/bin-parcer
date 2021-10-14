@@ -13,7 +13,7 @@ pastebinOmatic is a utility lib for working text bins
 import bin_parcer as bp
 
 
-p = bp.parce("https://pastebin.com/XrXxjtWw")
+p = bp.pastebin("https://pastebin.com/XrXxjtWw")
 
 paste_title = p.get_title()
 

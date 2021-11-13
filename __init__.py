@@ -2,8 +2,7 @@ from bs4 import BeautifulSoup
 import requests
 import json
 
-# pastebinOmatic by hiikion aka hkon
-# v1.2
+
 # mpl 2.0 licence 
 
 
